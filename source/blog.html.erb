@@ -1,0 +1,205 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>John Lin Blog</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+  <link rel="stylesheet" href="css/layouts/blog.css">
+</head>
+<body>
+  <div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+
+      <div class="header">
+        <div class="avatar"><img class="post-avatar" alt="John's avatar" height="100" width="100" src="/img/peru2.png"></div>
+        <a href="/index.html"><h1 class="brand-title">John Lin</h1></a>
+        <h2 class="brand-tagline">Thoughts. Notes. Info.</h2>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a class="pure-button" href="/about.html">About John</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+      <div>
+
+        <!-- beginning of blog posts -->
+
+        <div class="posts">
+          <h1 class="content-subhead">Post</h1>
+          <section class="post">
+            <header class="post-header">
+              <h2 class="post-title">TITLE</h2>
+              <p class="post-meta">
+                By <a class="post-author" href="/about.html">John</a>
+              </p>
+            </header>
+
+            <div class="post-description">
+              <p>
+                CONTENT
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <!-- end of blog post -->
+
+        <!-- beginning of blog posts -->
+
+        <div class="posts">
+          <h1 class="content-subhead">Post</h1>
+          <section class="post">
+            <header class="post-header">
+              <h2 class="post-title">JavaScript's Prototype: A quick look</h2>
+              <p class="post-meta">
+                By <a class="post-author" href="/about.html">John</a>
+              </p>
+            </header>
+
+            <div class="post-description">
+              <p>
+                My explanation: The prototype property in JavaScript allows you to add properties and methods to an object. Let’s say you have object constructer Person as shown below. However later on you decided that you wanted all objects created from the object constructer to inherit a certain property or function.
+              </p>
+              <button class="pure-button">Sample Code</button>
+<div id="show-code">
+<pre><code>
+function Person(name) {
+  this.name = name;
+}
+</code></pre>
+            <p>
+              <pre>
+var john = new Person("Johnny Appleseed");
+console.log(john.name); // "Johnny Appleseed"
+Here I created an object john with the Person constructer.
+Here’s where prototype comes into play. The prototype extends the method speak and property legs to all instances of the Person constructer. When an object is constructed, it inherits all of the properties of its constructor’s prototype.</pre></p>
+<pre><code>Person.prototype.favoriteSauce = "Apple Sauce";
+Person.prototype.talk = function() { alert("I love apples!")};
+
+console.log(john.favoriteSauce); // "Apple Sauce"
+john.talk(); // "I love apples!"
+
+var sally = new Person("Sally Appleseed");
+console.log(sally.favoriteSauce); // "Apple Sauce"
+sally.talk(); // "I love apples!"
+</code></pre>
+</div>
+            </div>
+          </section>
+        </div>
+
+        <!-- end of blog post -->
+
+        <!-- beginning of blog posts -->
+
+        <div class="posts">
+          <h1 class="content-subhead">Post</h1>
+          <section class="post">
+            <header class="post-header">
+              <h2 class="post-title">Linked List Complexity</h2>
+              <p class="post-meta">
+                By <a class="post-author" href="/about.html">John</a>
+              </p>
+            </header>
+
+            <div class="post-description">
+              <p>Linked Lists are one approach to producing a dynamically sized collection of elements. One example lists can have an advantage over arrays is because insertion only requires the previous node to point to the newly inserted node and the newly inserted node to point to the next node. In an array an insertion requires all the subsequent elements to be copied and shifted over one index. Below is a look at the complexity of some linked list methods.</p>
+
+              <button class="pure-button">Click to Read More</button>
+              <div id="show-code">
+              <p><pre>
+<span>SinglyLinkedList#addToFrontOfList(data)</span> Best-case complexity: O(1). Worst-case complexity: O(1). Inserting a node at the front of a linked list only requires its head to be changed. The rest of the nodes in the list will keep their values and next pointers.
+
+<span>SinglyLinkedList#addToEndOfList(data)</span> Best-case complexity: O(1). Worst-case complexity: O(n). Worst will take O(n) since the entire linked list needs to be transversed to the end to insert the new node.  However, O(1) can be achieved If the tail of a list is known and stored - meaning no traversing the linked list needed and only altering the next pointer of the existing tail.
+
+<span>SinglyLinkedList#find_data_point(data) and SinglyLinkedList#get(index)</span> Best-case complexity: O(n). Worst-case complexity: O(n) . In order to find a particular data point or index of a linked list, the linked list must be traversed - elements of a linked list cannot be “indexed” into.
+
+<span>SinglyLinkedList#delete(data)</span> Best-case complexity: O(n). Worst-case complexity: O(n). Removing the last node of a list takes O(n) time because it require the linked list to be traversed and for the previous node to point to the next node of the deleted node.
+
+<span>SinglyLinkedList#sizeOfLinkedList</span> Best-case complexity: O(1). Worst-case complexity: O(n). In order to find the number of nodes in a linked list, the worst case will take O(n) since the entire linked list needs to be traversed to count each node. To achieve O(1) complexity, the size of the linked list can be stored and updated on each node insertion or deletion - retrieving this size would then be constant time.</pre></p>
+</div>
+            </div>
+                 <br>
+                  <a href="https://github.com/johnlin1214/Data-structure-practice/blob/master/ruby_linked_list_practice.rb">Check out my implementation of a singly linked list in ruby.</a>
+          </section>
+        </div>
+
+        <!-- end of blog post -->
+
+        <!-- beginning of blog posts -->
+
+        <div class="posts">
+          <h1 class="content-subhead">Post</h1>
+          <section class="post">
+            <header class="post-header">
+              <h2 class="post-title">ECMAScript 5 Array Methods</h2>
+              <p class="post-meta">
+                By <a class="post-author" href="/about.html">John</a>
+              </p>
+            </header>
+
+            <div class="post-description">
+              <p>
+                ECMAScript 5 defines five iterative methods for arrays. Each of the methods accepts two arguments: a function to run on each item and an optional scope object in which to run the function (affecting the value of this). Below are examples of the 5 iterative methods: every(), some(), filter(), map(), and forEach().
+              </p>
+              <ul>
+                <li>every — Runs the given function on every item in the array and returns true if the function returns true for every item.</li>
+                <li>some — Runs the given function on every item in the array and returns true if the function returns true for any one item.</li>
+                <li>filter — Runs the function on every item in the array & returns an array of all items for which the function returns true.</li>
+                <li>map — Runs the given function on every item in the array and returns the result of each function call in an array.</li>
+                <li>forEach — Runs the given function on every item in the array. This method has no return value.</li>
+              </ul>
+              <button class="pure-button">Sample Code</button>
+
+              <div id="show-code">
+<pre><code>
+var coolAnimalsArray = ["sloth","honey badger","seal"];
+var primeArray = [2,3,5,7,11,13];
+
+coolAnimalsArray.every(function(animal){return animal.length > 3}) // Returns true
+primeArray.every(function(num){return num > 3}) // Returns false
+
+coolAnimalsArray.some(function(animal){return animal.length > 20}) // Returns false
+primeArray.some(function(num){return num > 12}) // Returns true
+
+coolAnimalsArray.filter(function(animal){return animal.length > 4}) // Returns [ 'sloth', 'honey badger' ]
+primeArray.filter(function(num){return num > 4}) // Returns [ 5, 7, 11, 13 ]
+
+coolAnimalsArray.map(function(animal){return "I love " + animal})); // Returns [ 'I love sloth', 'I love honey badger', 'I love seal' ]
+primeArray.map(function(num){return num * 2 }) // Returns [ 4, 6, 10, 14, 22, 26 ]
+
+coolAnimalsArray.forEach(function(animal){return primeArray.push(animal)}); // Returns [ 2, 3, 5, 7, 11, 13, 'sloth', 'honey badger', 'seal' ]
+</code></pre>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- end of blog post -->
+
+        <div class="footer">
+          <div class="pure-menu pure-menu-horizontal pure-menu-open">
+            <ul>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="https://github.com/johnlin1214">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
