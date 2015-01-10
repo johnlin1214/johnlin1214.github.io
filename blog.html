@@ -62,16 +62,49 @@
           <h1 class="content-subhead">Post</h1>
           <section class="post">
             <header class="post-header">
-              <h2 class="post-title">TITLE</h2>
+              <h2 class="post-title">JavaScript's Call, Apply, and Bind</h2>
               <p class="post-meta">
                 By <a class="post-author" href="/about.html">John</a>
               </p>
             </header>
 
             <div class="post-description">
-              <p>
-                Upcoming Blog Post!
+ <p>
+                JavaScript's Call, Apply, and Bind methods are very useful when you want to change the context an object executing a method. Call, Apply, and Bind can be confusing at first to grasp and sometimes I still trip myself up. Here is my explaination to try to shed some light on these methods. I figured the best way to understand these mothods is to see a simple example. I would highly recommend opening up your Dev Tools in your chrome browser and follow along with the code.
               </p>
+              <button class="pure-button">Sample Code</button>
+<div id="show-code">
+<pre><code><p>The first stepping stone is to understanding the context of "this" in javascript. A function runs within the scope of the object it sits in. In the case below, foo will run in the context of the window object.</p>function foo() {
+  console.log(this) // "this" being the context that the function foo sits in.
+}
+
+foo(); // will console log the window object => Window {top: Window, window: Window, location:....
+window.foo(): // window.foo() is the same as calling foo() since foo() is a method of the window object.
+<p>Let's create an object "john" with the same method foo()</p>var john = {
+  foo: function() {
+    console.log(this);
+  }
+}
+
+john.foo(); // will console log the object "john" - "this" is now in the context of john instead of the window object.
+<p>Remember the value of "this" can change depending on the object calling the method. However lets say I wanted to run john.foo() in the context of the window - instead of the john object it sits in. This is where the methods call and apply comes in handy. When I use call or apply, I change the context that "this" executes in.</p>john.foo.call(window); // Using the Call method, I can execute john.foo() in the context of the window object. Function will now console log the window object.
+<p>Call and Apply are the same thing except the main difference is that apply lets you invoke the function with arguments as an array. Call requires the parameters be listed explicitly.</p>call => .call(context, argument1, argument2, argument3...)
+apply => .apply(context, array)
+
+For example:
+var john = {
+  foo: function(name1, name2, name3) {
+    console.log(this);
+    console.log("John's friends: " + name1 + ", " + name2 + ", " + name3);
+  }
+}
+
+john.foo.call(window, "Clifford", "Bella", "Ricky"); // This context = window object and here I explicitly list my parameters.
+john.foo.apply(window, ["Clifford", "Bella", "Ricky"]); // This context = window object and Here I pass in an array as my parameter.
+<p>Both call and apply methods above will console log: "John's friends: Clifford, Bella, Ricky"</p><p>Bind takes one argument, the context, and returns the bound function</p>var johnsBoundFoo = john.foo.bind(window); // so now i created a function johnsBoundFoo that will run foo in the context of the window with the help of bind.
+johnsBoundFoo(); // will console log the window object
+john.foo(); // will console log the john object, foo is called in the context of the john object
+<p>That's Call, Apply, and Bind. If you're new to this, it may be unclear on why you would want to change the context. All you should know for now is that you can change the context. Hope this helps!</p></code></pre></div>
             </div>
           </section>
         </div>
