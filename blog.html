@@ -97,7 +97,7 @@
 
             <div class="post-description">
  <p>
-                JavaScript's Call, Apply, and Bind methods are very useful when you want to change the context an object executing a method. Call, Apply, and Bind can be confusing at first to grasp and sometimes I still trip myself up. Here is my explanation to try to shed some light on these methods. I figured the best way to understand these methods is to see a simple example. I would highly recommend opening up your Dev Tools in your chrome browser and follow along with the code.
+                JavaScript's Call, Apply, and Bind methods are very useful when you want to change the context an object executing a method. Call, Apply, and Bind can be confusing at first to grasp and sometimes I still trip myself up. Here is my explanation to try to shed some light on these methods. I figured the best way to understand these methods is to see a simple example. I would highly recommend opening up your Dev Tools/Firebug in your Chrome/Firefox browser and follow along with the code.
               </p>
               <button class="pure-button">Sample Code</button>
 <div id="show-code">
@@ -127,7 +127,7 @@ var john = {
 }
 
 john.foo.call(window, "Clifford", "Bella", "Ricky"); // This context = window object and here I explicitly list my parameters.
-john.foo.apply(window, ["Clifford", "Bella", "Ricky"]); // This context = window object and Here I pass in an array as my parameter.
+john.foo.apply(window, ["Clifford", "Bella", "Ricky"]); // This context = window object and here I pass in an array as my parameter.
 <p>Both call and apply methods above will console log: "John's friends: Clifford, Bella, Ricky"</p><p>Bind takes one argument, the context, and returns the bound function</p>var johnsBoundFoo = john.foo.bind(window); // so now i created a function johnsBoundFoo that will run foo in the context of the window with the help of bind.
 johnsBoundFoo(); // will console log the window object
 john.foo(); // will console log the john object, foo is called in the context of the john object
@@ -152,7 +152,7 @@ john.foo(); // will console log the john object, foo is called in the context of
 
             <div class="post-description">
               <p>
-                My explanation: The prototype property in JavaScript allows you to add properties and methods to an object. Let’s say you have object constructer Person as shown below. However later on you decided that you wanted all objects created from the object constructer to inherit a certain property or function.
+                My explanation: The prototype property in JavaScript allows you to add properties and methods to an object. Let’s say you have object constructor Person as shown below. However later on you decided that you wanted all objects created from the object constructor to inherit a certain property or function. I like think of the prototype method as a child inheriting properties from his/her parents.
               </p>
               <button class="pure-button">Sample Code</button>
 <div id="show-code">
@@ -234,7 +234,7 @@ sally.talk(); // "I love apples!"
 
             <div class="post-description">
               <p>
-                ECMAScript 5 defines five iterative methods for arrays. Each of the methods accepts two arguments: a function to run on each item and an optional scope object in which to run the function (affecting the value of this). Below are examples of the 5 iterative methods: every(), some(), filter(), map(), and forEach().
+                ECMAScript 5 defines five iterative methods for arrays that are quite useful. Each of the methods accepts two arguments: a function to run on each item and an optional scope object in which to run the function (affecting the value of this). Below are examples of the 5 iterative methods: every(), some(), filter(), map(), and forEach().
               </p>
               <ul>
                 <li>every — Runs the given function on every item in the array and returns true if the function returns true for every item.</li>
