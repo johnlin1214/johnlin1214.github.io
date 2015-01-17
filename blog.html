@@ -57,6 +57,52 @@
     <div class="content pure-u-1 pure-u-md-3-4">
       <div>
 
+        <!-- beginning of blog posts -->
+
+        <div class="posts">
+          <h1 class="content-subhead">Post</h1>
+          <section class="post">
+            <header class="post-header">
+              <h2 class="post-title">JavaScript - Module Pattern</h2>
+              <p class="post-meta">
+                By <a class="post-author" href="/about.html">John</a>
+              </p>
+            </header>
+
+            <div class="post-description">
+              <p>
+                One of my favorite design patterns in JavaScript is the module pattern, where you can separate your JavaScript into logical modules. One advantage is that the module pattern can keep variables or functions private so that users cannot view or access them - a need to know basis. The module pattern is a self invoking anonymous function expression - which follows the pattern<code>(function(){ ... })();</code>
+              </p>
+              <p>I made a module below to calculate shipping costs for my own amazing shipping business. However I don't want my customers or competitors to know what my base shipping price is and how I calculate my shipping price based on a given weight.</p>
+
+              <button class="pure-button">Sample Code</button>
+              <div id="show-code"><p><pre>var johnShippingCompany = johnShippingCompany || {}; // Declaring my main namespace
+
+johnShippingCompany.shippingCalculator = (function(){
+  var mySecretBaseShippingPrice = 2;    // My secret base shipping price
+
+  function mySecretFormula(weightOfItem) {    // My secret formula to calculate shipping price
+    return mySecretBaseShippingPrice + Math.floor(weightOfItem/3);
+  };
+
+  function calculateShippingCost(weightOfItem) {    // Calculate and return the shipping price
+    return "Your shipping cost: $" + mySecretFormula(weightOfItem);
+  }
+
+  return {
+    calculateShippingCost: calculateShippingCost    // Return calculateShippingCost function to make it "public"
+  }
+})();
+
+johnShippingCompany.shippingCalculator.calculateShippingCost(9)  // will return "Your shipping cost: $5"
+johnShippingCompany.shippingCalculator.mySecretBaseShippingPrice // will return undefined - secret!
+johnShippingCompany.shippingCalculator.mySecretFormula // will return undefined - secret!</pre></p>
+</div>
+            </div>
+          </section>
+        </div>
+
+        <!-- end of blog post -->
 
         <!-- beginning of blog posts -->
 
