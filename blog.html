@@ -198,7 +198,7 @@ john.foo(); // will console log the john object, foo is called in the context of
 
             <div class="post-description">
               <p>
-                My explanation: The prototype property in JavaScript allows you to add properties and methods to an object. Let’s say you have object constructor Person as shown below. However later on you decided that you wanted all objects created from the object constructor to inherit a certain property or function. I like think of the prototype method as a child inheriting properties from his/her parents.
+                My explanation: The prototype property in JavaScript allows you to add properties and methods to an object. Let’s say you have object constructor Person as shown below. However later on you decided that you wanted all objects created from the object constructor to inherit a certain property or function. One of the major benefits of adding a function or variable to the prototype is that it has to be in the memory only once, not for every instance - uses less memory space and better performance. I like think of the prototype method as a child inheriting properties from his/her parents. If a member of an object can't be found in the object it looks for it in the prototype chain.
               </p>
               <button class="pure-button">Sample Code</button>
 <div id="show-code">
@@ -211,8 +211,8 @@ function Person(name) {
               <pre>
 var john = new Person("Johnny Appleseed");
 console.log(john.name); // "Johnny Appleseed"
-Here I created an object john with the Person constructer.
-Here’s where prototype comes into play. The prototype extends the method speak and property legs to all instances of the Person constructer. When an object is constructed, it inherits all of the properties of its constructor’s prototype.</pre></p>
+Here I created an object john with the Person constructor.
+Here’s where prototype comes into play. The prototype extends the method speak and property legs to all instances of the Person constructor. When an object is constructed, it inherits all of the properties of its constructors prototype.</pre></p>
 <pre><code>Person.prototype.favoriteSauce = "Apple Sauce";
 Person.prototype.talk = function() { alert("I love apples!")};
 
