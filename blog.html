@@ -17,6 +17,8 @@
         <link href='http://fonts.googleapis.com/css?family=Rosario' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Neuton' rel='stylesheet' type='text/css'>
         <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
 
     </head>
     <body>
@@ -41,7 +43,7 @@
     <div class="sidebar pure-u-1 pure-u-md-1-4">
 
       <div class="header">
-        <div class="avatar"><img class="post-avatar" alt="John's avatar" height="100" width="100" src="/img/peru2.png"></div>
+<!--         <div class="avatar"><img class="post-avatar" alt="John's avatar" height="100" width="100" src="/img/peru2.png"></div> -->
         <a href="http://johnlin1214.github.io/"><h1 class="brand-title">John Lin</h1></a>
         <h2 class="brand-tagline">Thoughts. Notes. Info.</h2>
         <nav class="nav">
@@ -56,6 +58,71 @@
 
     <div class="content pure-u-1 pure-u-md-3-4">
       <div>
+
+ <!-- beginning of blog posts -->
+
+        <div class="posts">
+          <h1 class="content-subhead">Post</h1>
+          <section class="post">
+            <header class="post-header">
+              <h2 class="post-title">Block bindings in upcoming ECMAScript 6?</h2>
+              <p class="post-meta">
+                By <a class="post-author" href="/about.html">John</a>
+              </p>
+            </header>
+
+            <div class="post-description">
+              <p>ECMAScript 6 is the next version of the standard, code-named "Harmony" or "ES.next". Per Mozilla MDN "ECMAScript 6 "will start to go into the official publication process starting in March 2015." I thought that block binding in ECMAScript 6 was one of the interesting new features.
+              </p>
+
+              <button class="pure-button">Sample Code</button>
+              <div id="show-code">
+<p>In JacaScript variables declared using "var" are hoisted to the top of the function or global space. This can sometimes end up causing bugs for developers.
+The let declaration syntax is the same as for var. You can use "let" instead of "var" to declare a variable but keep its scope to the current code block. For example:</p>
+<pre class="prettyprint lang-javascript">
+// ES5 using var for variable declaration
+function getValue(condition) {
+    if (condition) {
+        var value = "john";
+        return value;
+    } else {
+        // value exist here - it just has a value of undefined
+        return null;
+    }
+    // value exist here - it just has a value of undefined
+}
+
+// ES6 using let for variable declaration
+function getValue(condition) {
+    if (condition) {
+        let value = "john";
+        return value;
+    } else {
+        // value doesn't exist here
+        return null;
+    }
+    // value doesn't exist here
+}
+
+// You can even use block level scoping of variables in for loops
+for (var i=0; i < 4; i++) {
+    console.log(i)
+}
+console.log(i) // "i" value is 3 and is still accessible here
+
+// Now using "let" instead
+for (let i=0; i < 4; i++) {
+    console.log(i)
+}
+console.log(i) // "i" value is undefined
+</pre><p>Hope that gives you a sense of the new <a href="https://developer.mozilla.org/en-US/docs/tag/ECMAScript6">ECMAScript 6</a></p>
+</div>
+            </div>
+
+          </section>
+        </div>
+
+        <!-- end of blog post -->
 
         <!-- beginning of blog posts -->
 
@@ -75,8 +142,9 @@
               </p>
               <p>I made a module below to calculate shipping costs for my own amazing shipping business. However I don't want my customers or competitors to know what my base shipping price is and how I calculate my shipping price based on a given weight.</p>
 
+
               <button class="pure-button">Sample Code</button>
-              <div id="show-code"><p><pre>var johnShippingCompany = johnShippingCompany || {}; // Declaring my main namespace
+              <div id="show-code"><p><pre class="prettyprint lang-javascript">var johnShippingCompany = johnShippingCompany || {}; // Declaring my main namespace
 
 johnShippingCompany.shippingCalculator = (function(){
   var mySecretBaseShippingPrice = 2;    // My secret base shipping price
@@ -147,7 +215,7 @@ johnShippingCompany.shippingCalculator.mySecretFormula // will return undefined 
               </p>
               <button class="pure-button">Sample Code</button>
 <div id="show-code">
-<pre><code><p>The first stepping stone is to understanding the context of "this" in javascript. A function runs within the scope of the object it sits in. In the case below, foo will run in the context of the window object.</p>function foo() {
+<pre class="prettyprint lang-javascript"><code><p>The first stepping stone is to understanding the context of "this" in javascript. A function runs within the scope of the object it sits in. In the case below, foo will run in the context of the window object.</p>function foo() {
   console.log(this) // "this" being the context that the function foo sits in.
 }
 
@@ -202,7 +270,7 @@ john.foo(); // will console log the john object, foo is called in the context of
               </p>
               <button class="pure-button">Sample Code</button>
 <div id="show-code">
-<pre><code>
+<pre class="prettyprint lang-javascript"><code>
 function Person(name) {
   this.name = name;
 }
@@ -247,7 +315,7 @@ sally.talk(); // "I love apples!"
 
               <button class="pure-button">Click to Read More</button>
               <div id="show-code">
-              <p><pre>
+              <p><pre class="">
 <span>SinglyLinkedList#addToFrontOfList(data)</span> Best-case complexity: O(1). Worst-case complexity: O(1). Inserting a node at the front of a linked list only requires its head to be changed. The rest of the nodes in the list will keep their values and next pointers.
 
 <span>SinglyLinkedList#addToEndOfList(data)</span> Best-case complexity: O(1). Worst-case complexity: O(n). Worst will take O(n) since the entire linked list needs to be transversed to the end to insert the new node.  However, O(1) can be achieved If the tail of a list is known and stored - meaning no traversing the linked list needed and only altering the next pointer of the existing tail.
@@ -260,7 +328,7 @@ sally.talk(); // "I love apples!"
 </div>
             </div>
                  <br>
-                  <a href="https://github.com/johnlin1214/Data-structure-practice/blob/master/ruby_linked_list_practice.rb">Check out my implementation of a singly linked list in ruby.</a>
+                  <a href="https://github.com/johnlin1214/Data-structure-practice/blob/master/linked_list.rb">Check out my implementation of a singly linked list in ruby.</a>
           </section>
         </div>
 
@@ -292,7 +360,7 @@ sally.talk(); // "I love apples!"
               <button class="pure-button">Sample Code</button>
 
               <div id="show-code">
-<pre><code>
+<pre class="prettyprint lang-javascript"><code>
 var coolAnimalsArray = ["sloth","honey badger","seal"];
 var primeArray = [2,3,5,7,11,13];
 
