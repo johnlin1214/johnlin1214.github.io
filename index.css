@@ -64,6 +64,10 @@ nav {
   background-repeat: no-repeat;
 }
 
+a:hover{
+    text-decoration: none;
+}
+
 .john-top-main span {
   color: #ffffff;
   text-align: center;
@@ -161,7 +165,7 @@ cite {
   font-size: 5em;
 }
 #about-john {
-  padding: 2em;
+  padding: 2em 3em 2em 3em;
 }
 
 #about-john h1 {
