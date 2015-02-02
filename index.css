@@ -1,0 +1,213 @@
+html, body {
+  width: auto !important;
+  overflow-x: hidden !important;
+}
+
+nav {
+ position: fixed;
+ opacity: 0.8;
+}
+
+.text-black {
+  color: black;
+}
+
+.nopadding {
+ padding: 0 !important;
+ margin: 0 !important;
+}
+
+.centered-text {
+  text-align:center
+}
+
+#john-nav-top {
+  background-color: #eeeeee;
+}
+
+
+#navbar a {
+  color: #5f5f5f;
+}
+
+#navbar a:hover {
+  color: #2cb4ac;
+}
+
+.navbar-nav a {
+ margin: 0 1.5em;
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+.spacer {
+  width: 98%;
+  height: 3.7em;
+}
+
+.john-top-main {
+  height: 42em;
+  background:url(img/uni.png) #A98436 left top;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.john-top-main span {
+  color: #ffffff;
+  text-align: center;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 1.5em;
+}
+
+#me-three-words {
+  color: #ffffff;
+}
+
+#john-title-top h1, h2 {
+  color: #ffffff;
+}
+
+#john-three-words > div {
+  position: relative;
+  padding-top: 6em;
+}
+
+
+.fade {
+ opacity: 1;
+ transition: opacity .25s ease-in-out;
+ -moz-transition: opacity .25s ease-in-out;
+ -webkit-transition: opacity .25s ease-in-out;
+}
+
+.fade:hover {
+  opacity: 0.5;
+}
+
+#john-title-top {
+  padding-top: 9em;
+  text-align: center;
+}
+
+#john-title-top h1 {
+  font-size: 5em;
+  font-family: 'ABeeZee', sans-serif;
+}
+
+#picture-john img {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+#picture-about-john {
+  background-color: #ecf0f1
+}
+
+#picture-about-john img {
+  margin: 2em 0em 2em 5em;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+#quote-div {
+  height: 55em;
+  background:url(img/1.png) no-repeat center center fixed;
+  background-size: 100% 100%;
+  background-size: cover;
+}
+
+#quote-div h3 {
+  padding-top: 1.4em;
+  text-align: center;
+  font-size: 2.1em;
+}
+
+#quote-div img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+cite {
+  font-size: 1.7em;
+}
+
+.footer {
+  background-color: #2cb4ac;
+  height: 4em;
+}
+
+.footer p {
+  padding-top: 1em;
+  text-align: right;
+}
+
+.col-sm-3 {
+  text-align: center;
+}
+
+.contact-john {
+  padding: 1em;
+  font-size: 5em;
+}
+#about-john {
+  padding: 2em;
+}
+
+#about-john h1 {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.contact-john a {
+  color: #5f5f5f;
+}
+
+.contact-john a:hover {
+  color: #2cb4ac;
+}
+
+#about-john p {
+  font-size: 21px;
+  animation: fadein 4s;
+  -moz-animation: fadein 4s; /* Firefox */
+  -webkit-animation: fadein 4s; /* Safari and Chrome */
+  -o-animation: fadein 4s; /* Opera */
+}
+@keyframes fadein {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+@-moz-keyframes fadein { /* Firefox */
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+@-o-keyframes fadein { /* Opera */
+  from {
+    opacity:0;
+  }
+  to {
+    opacity: 1;
+  }
+}
