@@ -29,6 +29,10 @@ nav {
   text-align:center
 }
 
+#skills {
+  height: 5em;
+}
+
 #john-nav-top {
   background-color: #eeeeee;
 }
@@ -132,7 +136,7 @@ a:hover{
 }
 
 #quote-div {
-  height: 55em;
+  height: 60em;
   background:url(img/1.png) no-repeat center center fixed;
   background-size: 100% 100%;
   background-size: cover;
@@ -163,12 +167,16 @@ cite {
   text-align: right;
 }
 
+#picture-about-john {
+  padding: 0 3em;
+}
+
 .col-sm-3 {
   text-align: center;
 }
 
 .contact-john {
-  padding: 1em;
+  padding: 0.5em;
   font-size: 5em;
 }
 #about-john {
