@@ -30,7 +30,8 @@ nav {
 }
 
 #skills {
-  height: 5em;
+  background-color: #2cb4ac;
+  height: 35em;
 }
 
 #john-nav-top {
@@ -136,7 +137,7 @@ a:hover{
 }
 
 #quote-div {
-  height: 60em;
+  height: 45em;
   background:url(img/1.png) no-repeat center center fixed;
   background-size: 100% 100%;
   background-size: cover;
