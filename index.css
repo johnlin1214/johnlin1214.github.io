@@ -122,6 +122,10 @@ a:hover{
   font-family: 'ABeeZee', sans-serif;
 }
 
+.slabo-font{
+  font-family: 'Slabo 27px', serif;
+}
+
 #picture-john img {
   max-width: 80%;
   max-height: 80%;

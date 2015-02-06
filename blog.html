@@ -45,7 +45,6 @@
     <div class="sidebar pure-u-1 pure-u-md-1-4">
 
       <div class="header">
-<!--         <div class="avatar"><img class="post-avatar" alt="John's avatar" height="100" width="100" src="/img/peru2.png"></div> -->
         <a href="http://johnlin1214.github.io/"><h1 class="brand-title">John Lin</h1></a>
         <h2 class="brand-tagline">Thoughts. Notes. Info.</h2>
         <nav class="nav">
@@ -59,6 +58,49 @@
 
     <div class="content pure-u-1 pure-u-md-3-4">
       <div>
+
+
+
+ <!-- beginning of blog posts -->
+
+        <div class="posts">
+          <h1 class="content-subhead">Post</h1>
+          <section class="post">
+            <header class="post-header">
+              <h2 class="post-title">__Proto__ VS Prototype</h2>
+              <p class="post-meta">
+                By <a class="post-author" href="/about.html">John</a>
+              </p>
+            </header>
+
+            <div class="post-description">
+              <p>The prototype property is only available in constructors. JavaScript native objects such as Array, String, Function and Object are constructors.
+              </p>
+
+              <button class="pure-button">Sample Code</button>
+              <div id="show-code">
+<p>In JavaScript variables declared using "var" are hoisted to the top of the function or global space. This can sometimes end up causing bugs for developers.
+The let declaration syntax is the same as for var. You can use "let" instead of "var" to declare a variable but keep its scope to the current code block. For example:</p>
+<pre class="prettyprint lang-javascript">
+
+</pre><p>Hope that gives you a sense of the new <a href="https://developer.mozilla.org/en-US/docs/tag/ECMAScript6">ECMAScript 6</a></p>
+</div>
+            </div>
+
+          </section>
+        </div>
+
+        <!-- end of blog post -->
+
+
+
+
+
+
+
+
+
+
 
  <!-- beginning of blog posts -->
 
@@ -148,7 +190,7 @@ console.log(i) // "i" value is undefined
               <div id="show-code"><p><pre class="prettyprint lang-javascript">var johnShippingCompany = johnShippingCompany || {}; // Declaring my main namespace
 
 johnShippingCompany.shippingCalculator = (function(){
-  var mySecretBaseShippingPrice = 2;    // My secret base shipping price
+  var mySecretBaseShippingPrice = 2;   // My secret base shipping price
 
   function mySecretFormula(weightOfItem) {    // My secret formula to calculate shipping price
     return mySecretBaseShippingPrice + Math.floor(weightOfItem/3);
