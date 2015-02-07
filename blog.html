@@ -28,8 +28,7 @@
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
             <![endif]-->
 
-            
-<!doctype html>
+            <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -59,48 +58,53 @@
     <div class="content pure-u-1 pure-u-md-3-4">
       <div>
 
-
-
  <!-- beginning of blog posts -->
-<!--
+
         <div class="posts">
           <h1 class="content-subhead">Post</h1>
           <section class="post">
             <header class="post-header">
-              <h2 class="post-title">__Proto__ VS Prototype</h2>
+              <h2 class="post-title">Prototype VS _ _Proto_ _</h2>
               <p class="post-meta">
                 By <a class="post-author" href="/about.html">John</a>
               </p>
             </header>
 
             <div class="post-description">
-              <p>The prototype property is only available in constructors. JavaScript native objects such as Array, String, Function and Object are constructors.
+              <p> __proto__ can be a bit confusing when understanding the difference between __proto__ vs prototype. Prototype is a property of a Function object - it is the prototype of objects constructed by that function. __proto__ is a property available in all instances. __proto__ is internal property of an object, pointing to its prototype. Below are some examples that helped me a bit to understanding the behavior of __proto__.
               </p>
 
               <button class="pure-button">Sample Code</button>
               <div id="show-code">
-<p>In JavaScript variables declared using "var" are hoisted to the top of the function or global space. This can sometimes end up causing bugs for developers.
-The let declaration syntax is the same as for var. You can use "let" instead of "var" to declare a variable but keep its scope to the current code block. For example:</p>
 <pre class="prettyprint lang-javascript">
 
-</pre><p>Hope that gives you a sense of the new <a href="https://developer.mozilla.org/en-US/docs/tag/ECMAScript6">ECMAScript 6</a></p>
+// Declare a constructor function Animal
+function Animal() {
+}
+
+// Create a new instance of Animal
+var clifford = new Animal();
+
+// Test equivalence - clifford inherits from Animal
+clifford.__proto__ === Animal.prototype; // true
+clifford.constructor.prototype === Animal.prototype; // true
+clifford.__proto__.__proto__ === Object.prototype; // true
+
+// We could assign a different object to clifford if we wanted.
+function Person() {
+}
+
+clifford.__proto__ = Person.prototype;
+
+// Now clifford inherits directly from Person.prototype instead of Animal.prototype. Clifford loses the properties it originally inherited from Animal.prototype.
+</pre>
+<p>One thing to take away from this: Don't use or assign __proto__ and you'll be fine! :</p>
 </div>
             </div>
-
           </section>
-        </div> -->
+        </div>
 
         <!-- end of blog post -->
-
-
-
-
-
-
-
-
-
-
 
  <!-- beginning of blog posts -->
 
