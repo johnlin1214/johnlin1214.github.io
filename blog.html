@@ -74,6 +74,8 @@
               <p> __proto__ can be a bit confusing when understanding the difference between __proto__ vs prototype. Prototype is a property of a Function object - it is the prototype of objects constructed by that function. __proto__ is a property available in all instances. __proto__ is internal property of an object, pointing to its prototype. Below are some examples that helped me a bit to understanding the behavior of __proto__.
               </p>
 
+
+
               <button class="pure-button">Sample Code</button>
               <div id="show-code">
 <pre class="prettyprint lang-javascript">
@@ -99,7 +101,7 @@ clifford.__proto__ = Person.prototype;
 // Now clifford inherits directly from Person.prototype instead of Animal.prototype. Clifford loses the properties it originally inherited from Animal.prototype.
 </pre>
 <p>One thing to take away from this: Don't use or assign __proto__ and you'll be fine! :</p>
-</div>
+<a href="https://github.com/sporto/planetproto"><p>A great tutorial on __proto__</p></a></div>
             </div>
           </section>
         </div>

@@ -136,8 +136,8 @@ a:hover{
 }
 
 #picture-about-john img {
-  margin: 2em 0em 2em 5em;
-  box-shadow: 10px 10px 5px #888888;
+  margin: 2em 0em 2em 2em;
+  box-shadow: 13px 13px 8px #888888;
 }
 
 #quote-div {
@@ -198,6 +198,10 @@ cite {
 
 .contact-john a:hover {
   color: #2cb4ac;
+}
+
+#about-anchor {
+  height: 2em;
 }
 
 #about-john p {
