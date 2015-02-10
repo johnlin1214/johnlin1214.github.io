@@ -243,3 +243,12 @@ cite {
     opacity: 1;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  #about-john {
+   padding: .3em .6em .3em .6em;
+ }
+
+}
+
+
