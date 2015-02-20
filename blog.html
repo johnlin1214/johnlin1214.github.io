@@ -64,6 +64,77 @@
           <h1 class="content-subhead">Post</h1>
           <section class="post">
             <header class="post-header">
+              <h2 class="post-title">jQuery Optimization in Mind</h2>
+              <p class="post-meta">
+                By <a class="post-author" href="/about.html">John</a>
+              </p>
+            </header>
+
+            <div class="post-description">
+              <p>jQuery makes our lives easier, but jQuery selectors can be time costly when selectors are not written with optimization in mind. For example instead of using class selectors, $('.myclass'), try to use Id selectors, $('#myid') to locate a single element if possible. Below are 5 jQuery examples of writing more efficient slectors.</p>
+
+              <button class="pure-button">Sample Code</button>
+              <div id="show-code">
+<pre class="prettyprint lang-javascript">
+// Fast:
+$( "#shelter div.dog" );
+// jQuery searches right to left - meaning it finds all the div with the class dog first. The selects all the div.dog that has the parent element with the Id "#shelter".
+
+// Faster:
+$( "#shelter" ).find( "div.dog" );
+// This is mush faster since it utilizes document.getElementById() first then finds all child element "div.dog".
+
+2. Tags before classes
+// Fast:
+$(“.class”)
+// jQuery will search every DOM element for the class.
+
+// Faster:
+$(“div.class”)
+// jQuery will restrict its search to DIV elements only.
+
+3. Get rid of the middleman
+// Fast:
+$( ".data #page:first-child table.shelter td.dogs" );
+// A lot of searching...
+
+// Faster:
+$( ".data td.dogs" );
+// Better: Drop the middle if possible.
+
+4. Chain when possible
+// Fast:
+$("#animal-shelter").css("color", "pink");
+$("#animal-shelter").css("font-size", "12px");
+$("#animal-shelter").addClass(".clearfix");
+
+// Faster:
+$("#animal-shelter").css({ "color": "pink", "font-size": "12px"}).addClass(".clearfix");
+
+5. Use variables to cache multi-use DOM values or collections.
+If you plan on calling a particular selector multiple times - caching the selector would be more efficient.
+
+$puppies = $( "#shelter div.dog li" );
+
+$puppies.click(function() {
+    // Do something
+});</pre>
+<a href="http://learn.jquery.com/performance/optimize-selectors/">Optimize Selectors
+ from jQuery</a>
+</div>
+            </div>
+          </section>
+        </div>
+
+        <!-- end of blog post -->
+
+
+ <!-- beginning of blog posts -->
+
+        <div class="posts">
+          <h1 class="content-subhead">Post</h1>
+          <section class="post">
+            <header class="post-header">
               <h2 class="post-title">Prototype VS _ _Proto_ _</h2>
               <p class="post-meta">
                 By <a class="post-author" href="/about.html">John</a>
