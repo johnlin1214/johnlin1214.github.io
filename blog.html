@@ -78,7 +78,7 @@
 <pre class="prettyprint lang-javascript">
 // Fast:
 $( "#shelter div.dog" );
-// jQuery searches right to left - meaning it finds all the div with the class dog first. The selects all the div.dog that has the parent element with the Id "#shelter".
+// jQuery searches right to left - meaning it finds all the div with the class "dog" first. Then jQuery selects all the "div.dog" that has the parent element with the Id "#shelter".
 
 // Faster:
 $( "#shelter" ).find( "div.dog" );
@@ -100,7 +100,7 @@ $( ".data #page:first-child table.shelter td.dogs" );
 
 // Faster:
 $( ".data td.dogs" );
-// Better: Drop the middle if possible.
+// Drop the middle part if possible.
 
 4. Chain when possible
 // Fast:
