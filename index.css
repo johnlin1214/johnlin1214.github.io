@@ -66,7 +66,7 @@ nav {
 }
 
 .john-top-main {
-  height: 42em;
+  height: 44em;
   background:url(img/uni.png) #A98436 left top;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -132,7 +132,7 @@ a:hover{
 }
 
 #picture-about-john {
-  background-color: #ecf0f1
+  background-color: #ecf0f1;
 }
 
 #picture-about-john img {
@@ -141,14 +141,14 @@ a:hover{
 }
 
 #quote-div {
-  height: 45em;
+  height: 48em;
   background:url(img/1.png) no-repeat center center fixed;
   background-size: 100% 100%;
   background-size: cover;
 }
 
 #quote-div h3 {
-  padding-top: 3em;
+  padding-top: 2em;
   text-align: center;
   font-size: 2.1em;
 }
@@ -202,6 +202,13 @@ cite {
 
 #about-anchor {
   height: 2em;
+  background-color: #eeeeee;
+}
+
+.spacerdiv {
+  height: 3em;
+  background-color: #eeeeee;
+  min-width: 100%
 }
 
 #about-john p {
